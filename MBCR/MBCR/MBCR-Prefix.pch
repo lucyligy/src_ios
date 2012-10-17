@@ -1,0 +1,30 @@
+//
+// Prefix header for all source files of the 'MBCR' target in the 'MBCR' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+    #import "MBCRConstants.h"
+#endif
+
+#ifdef RZ_DEBUG
+    #define RZLog(fmt, ...) NSLog((@"Func: %s, Line: %d, " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+    #define RZLog(...)
+#endif
+
+#ifdef RZ_WEBLOG
+    #define RZWebLog(fmt, ...) NSLog((@"Func: %s, Line: %d, " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+    #define RZWebLog(...)
+#endif
+
+#define RZError(fmt, ...) NSLog((@"ERROR *** - Func: %s, Line: %d," fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);

@@ -1,0 +1,19 @@
+PSPDFKit v2
+-----------
+
+This package was purchased via http://PSPDFKit.com.
+
+Thanks for that! Your purchase helps to make PSPDFKit even more awesome.
+Please be fair and don't share the binary and/or source.
+And remember, your license allows you to integrate PSPDFKit into one single app.
+You'll get further licenses for a reduced price.
+
+Need help? http://pspdfkit.com/documentation.html
+Bugs? Suggestions? Feature wishes? pspdfkit@petersteinberger.com
+
+You need at least Xcode 4.4.1 with Clang to compile.
+
+And a reminder, PLEASE DO NOT EDIT THE SOURCE CODE.
+I update often and refactor quite mercyless. You'll gonna have a hard time merging changes.
+The correct way is subclassing and using the overrideClassNames feature of PSPDFViewController and PSPDFDocument.
+For examples, check ot PSPDFCatalog.

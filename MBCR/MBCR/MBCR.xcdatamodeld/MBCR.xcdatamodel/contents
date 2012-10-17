@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="12A269" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AllPageAlert" representedClassName="AllPageAlert" parentEntity="MBCRAlert" syncable="YES">
+        <attribute name="sender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="senderEmail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sentOn" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="AVL" representedClassName="AVL" syncable="YES">
+        <attribute name="destination" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="heading" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lateness" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="scheduled" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="serverTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="speed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="stop" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="trip" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="vehicle" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="train" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Train" inverseName="avl" inverseEntity="Train" syncable="YES"/>
+    </entity>
+    <entity name="Bulletin" representedClassName="Bulletin" syncable="YES">
+        <attribute name="downloadDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="expireDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastOpened" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastSeen" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="modifyDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Line" representedClassName="Line" syncable="YES">
+        <attribute name="lineDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lineId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="alerts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MBCRAlert" inverseName="line" inverseEntity="MBCRAlert" syncable="YES"/>
+        <relationship name="trains" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Train" inverseName="line" inverseEntity="Train" syncable="YES"/>
+    </entity>
+    <entity name="Manual" representedClassName="Manual" syncable="YES">
+        <attribute name="downloadDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fileExtension" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastOpened" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastSeen" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="modifyDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="MBCRAlert" representedClassName="MBCRAlert" syncable="YES">
+        <attribute name="guid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lineId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="receivedOn" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="line" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Line" inverseName="alerts" inverseEntity="Line" syncable="YES"/>
+        <relationship name="train" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Train" inverseName="alerts" inverseEntity="Train" syncable="YES"/>
+    </entity>
+    <entity name="SubwayAlert" representedClassName="SubwayAlert" syncable="YES">
+        <attribute name="guid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="line" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="receivedOn" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="senderEmail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="service" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trainNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="TAlert" representedClassName="TAlert" parentEntity="MBCRAlert" syncable="YES">
+        <attribute name="alertId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="senderEmail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sentOn" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TrackAssignment" representedClassName="TrackAssignment" syncable="YES">
+        <attribute name="carrier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="departureTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="destination" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastUpdate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="origin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="predictedDepartureTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="track" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="trainNo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="train" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Train" inverseName="trackAssignment" inverseEntity="Train" syncable="YES"/>
+    </entity>
+    <entity name="Train" representedClassName="Train" syncable="YES">
+        <attribute name="lastUpdate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="trainId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="trainNo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="alerts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MBCRAlert" inverseName="train" inverseEntity="MBCRAlert" syncable="YES"/>
+        <relationship name="avl" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="AVL" inverseName="train" inverseEntity="AVL" syncable="YES"/>
+        <relationship name="line" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Line" inverseName="trains" inverseEntity="Line" syncable="YES"/>
+        <relationship name="trackAssignment" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TrackAssignment" inverseName="train" inverseEntity="TrackAssignment" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AllPageAlert" positionX="-137" positionY="-135" width="128" height="90"/>
+        <element name="AVL" positionX="243" positionY="207" width="128" height="240"/>
+        <element name="Bulletin" positionX="-423" positionY="-63" width="128" height="180"/>
+        <element name="Line" positionX="-252" positionY="201" width="128" height="120"/>
+        <element name="Manual" positionX="-279" positionY="-63" width="128" height="135"/>
+        <element name="MBCRAlert" positionX="-65" positionY="36" width="128" height="135"/>
+        <element name="SubwayAlert" positionX="-398" positionY="147" width="128" height="195"/>
+        <element name="TAlert" positionX="25" positionY="-150" width="128" height="120"/>
+        <element name="TrackAssignment" positionX="205" positionY="-39" width="128" height="193"/>
+        <element name="Train" positionX="36" positionY="198" width="128" height="120"/>
+    </elements>
+</model>
