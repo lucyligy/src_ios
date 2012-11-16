@@ -204,7 +204,7 @@ expectedResultType:(NSString*)expectedResultType
         NSNumber *fileSizeNumber = [fileAttributes objectForKey:NSFileSize];
         self.contentLength = [fileSizeNumber longLongValue];
         
-        [self setValue:[NSString stringWithFormat:@"%u", self.contentLength] forHTTPHeaderField:@"Content-Length"];
+        [self setValue:[NSString stringWithFormat:@"%llu", self.contentLength] forHTTPHeaderField:@"Content-Length"];
     }
     else if (_uploadFileURL)
     {

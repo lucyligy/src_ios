@@ -61,7 +61,6 @@
 		9859927F162861FE0009CCC8 /* ACKNOWLEDGEMENTS in Resources */ = {isa = PBXBuildFile; fileRef = 98599279162861FE0009CCC8 /* ACKNOWLEDGEMENTS */; };
 		98599280162861FE0009CCC8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9859927A162861FE0009CCC8 /* LICENSE */; };
 		98599281162861FE0009CCC8 /* PSPDFKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9859927B162861FE0009CCC8 /* PSPDFKit.bundle */; };
-		98599282162861FE0009CCC8 /* PSPDFKit.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9859927C162861FE0009CCC8 /* PSPDFKit.xcconfig */; };
 		98599283162861FE0009CCC8 /* VERSION in Resources */ = {isa = PBXBuildFile; fileRef = 9859927D162861FE0009CCC8 /* VERSION */; };
 		98613B5E15ACAC320084EB90 /* MBCRAlertDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98613B5D15ACAC320084EB90 /* MBCRAlertDetailsViewController.xib */; };
 		98613B6115ACB3160084EB90 /* Bulletin+Logic.m in Sources */ = {isa = PBXBuildFile; fileRef = 98613B6015ACB3160084EB90 /* Bulletin+Logic.m */; };
@@ -71,7 +70,6 @@
 		986AC73615D2C05900E37D3A /* MBCRFilterSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 986AC73515D2C05900E37D3A /* MBCRFilterSegmentedControl.m */; };
 		986AC73915D2D23000E37D3A /* windowshade_arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 986AC73715D2D22F00E37D3A /* windowshade_arrow_up.png */; };
 		986AC73A15D2D23000E37D3A /* windowshade_arrow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 986AC73815D2D22F00E37D3A /* windowshade_arrow_up@2x.png */; };
-		986AC75515D3087B00E37D3A /* MBCR-Info-Enterprise.plist in Resources */ = {isa = PBXBuildFile; fileRef = 986AC75415D3087B00E37D3A /* MBCR-Info-Enterprise.plist */; };
 		987383D2159E07F900F45859 /* MBCRAVLMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 987383D1159E07F900F45859 /* MBCRAVLMapViewController.xib */; };
 		987383D6159E081C00F45859 /* MBCRAVLMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 987383D5159E081C00F45859 /* MBCRAVLMapViewController.m */; };
 		987383D8159E085200F45859 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 987383D7159E085200F45859 /* CoreLocation.framework */; };
@@ -1587,7 +1585,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MBCR;
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = 98B1EE82157D298900CDBF55 /* Build configuration list for PBXProject "MBCR" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1758,11 +1756,9 @@
 				986AC73215D2B96200E37D3A /* bg_alert_details_header@2x.png in Resources */,
 				986AC73915D2D23000E37D3A /* windowshade_arrow_up.png in Resources */,
 				986AC73A15D2D23000E37D3A /* windowshade_arrow_up@2x.png in Resources */,
-				986AC75515D3087B00E37D3A /* MBCR-Info-Enterprise.plist in Resources */,
 				9859927F162861FE0009CCC8 /* ACKNOWLEDGEMENTS in Resources */,
 				98599280162861FE0009CCC8 /* LICENSE in Resources */,
 				98599281162861FE0009CCC8 /* PSPDFKit.bundle in Resources */,
-				98599282162861FE0009CCC8 /* PSPDFKit.xcconfig in Resources */,
 				98599283162861FE0009CCC8 /* VERSION in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
