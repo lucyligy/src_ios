@@ -19,6 +19,7 @@
 #import "RZFileManager.h"
 #import "RZWebServiceRequest.h"
 #import "MBCRAppDelegate.h"
+#import "OTP.h"
 
 static MBCRDataManager *s_dataManager;
 
@@ -323,6 +324,11 @@ static MBCRDataManager *s_dataManager;
     return [self fetchResultsControllerForEntityName:@"Train" sortDescriptor:@"trainNo" ascending:YES];
 }
 
+- (NSFetchedResultsController *)otpFetchResultsController
+{
+    return [self fetchResultsControllerForEntityName:@"OTP" sortDescriptor:@"RouteName" ascending:YES];
+}
+
 - (NSFetchedResultsController *)fetchResultsControllerForEntityName:(NSString *)entity sortDescriptor:(NSString *)desc ascending:(BOOL)ascending {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entity];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:desc ascending:ascending]]];
@@ -345,7 +351,6 @@ static MBCRDataManager *s_dataManager;
     }
     return [[resultsController fetchedObjects] count];
 }
-
 
 - (Line *)findLineForLineDescription:(NSString *)lineDescription {
     Line *line = nil;
@@ -1637,5 +1642,85 @@ static MBCRDataManager *s_dataManager;
     return importedTrain;
     
 }
+
+- (void) importOTP:(NSArray *)otp {
+    if(![otp isKindOfClass:[NSArray class]]) {
+        return;
+    }
+    
+    dispatch_async(self.importerQueue, ^{
+        NSManagedObjectContext *moc = [self safeMOC];
+        
+        NSArray *validAssignments = [self importTrackAssignments:trackArray intoManagedObjectContext:moc withTime:time];
+        
+        NSString *train = ((TrackAssignment*)[validAssignments lastObject]).train.trainNo;
+        
+        NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"TrackAssignment"];
+        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"train.trainNo == %@ && NOT SELF in %@", train, validAssignments];
+        
+        NSError *fetchError = nil;
+        NSArray *removedLines = [moc executeFetchRequest:fetchRequest error:&fetchError];
+        if (fetchError)
+        {
+            RZError(@"Error fetching Track Assignments to delete: %@", fetchError);
+        }
+        
+       
+        for (TrackAssignment *removed in removedLines)
+        {
+            [moc deleteObject:removed];
+        }
+        
+        //Delete any old Assignments
+        NSFetchRequest *allResults = [NSFetchRequest fetchRequestWithEntityName:@"TrackAssignment"];
+        
+        NSArray *allAssignments = [moc executeFetchRequest:allResults error:&fetchError];
+        if (fetchError)
+        {
+            RZError(@"Error fetching messages to delete: %@", fetchError);
+        }
+        NSArray* oldAssignments = [allAssignments filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+            TrackAssignment* alert = (TrackAssignment *)evaluatedObject;
+            return [alert.departureTime isOlderThenNow];
+        }]];
+        
+        for (TrackAssignment *removed in oldAssignments)
+        {
+            [moc deleteObject:removed];
+        }
+        
+        NSError *saveError = nil;
+        if (![moc save:&saveError])
+        {
+            RZError(@"Error saving Track Assignment import: %@", saveError);
+        }
+    });
+}
+
+- (OTP *)importOTP:(NSDictionary*)otp intoManagedObjectContext:(NSManagedObjectContext *)moc withTime:(NSDate *)time
+{
+    OTP *importedOtp = [[OTP alloc] init];
+        
+    importedOtp.divisionName = [otp validObjectForKey:kDivisionName];
+    importedOtp.routeName = [otp validObjectForKey:kRouteName];
+    importedOtp.dayPassengerCount = [otp validObjectForKey:kDayPassengerCount];
+    importedOtp.dayTrainCount = [otp validObjectForKey:kDayTrainCount];
+    importedOtp.dayOnTimeTrainCount = [otp validObjectForKey:kDayOnTimeTrainCount];
+    importedOtp.dayOTP = [otp validObjectForKey:kDayOTP];
+    importedOtp.mtdPassengerCount = [otp validObjectForKey:kMTDPassengerCount];
+    importedOtp.mtdTrainCount = [otp validObjectForKey:kMTDTrainCount];
+    importedOtp.mtdOnTimeTrainCount = [otp validObjectForKey:kMTDOnTimeTrainCount];
+    importedOtp.mtdOTP = [otp validObjectForKey:kMTDOTP];
+    importedOtp.monthOTP = [otp validObjectForKey:kMonthOTP];
+    importedOtp.prevMonthPassengerCount = [otp validObjectForKey:kPrevMonthPassengerCount];
+    importedOtp.prevMonthTrainCount = [otp validObjectForKey:kPrevMonthTrainCount];
+    importedOtp.prevMonthOnTimeTrainCount = [otp validObjectForKey:kPrevMonthOnTimeTrainCount];
+    importedOtp.prevMonthOTP = [otp validObjectForKey:kPrevMonthOTP];
+    importedOtp.routeID = [otp validObjectForKey:kRouteID];
+    importedOtp.divisionID = [otp validObjectForKey:kDivisionID];
+    
+    return importedOtp;
+}
+
 
 @end

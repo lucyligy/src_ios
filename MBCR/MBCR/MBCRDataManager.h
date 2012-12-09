@@ -40,6 +40,7 @@
 - (NSFetchedResultsController *)avlFetchResultsController;
 - (NSFetchedResultsController *)bulletinResultsController;
 - (NSFetchedResultsController *)unreadBulletinResultsController;
+- (NSFetchedResultsController *)otpFetchResultsController;
 
 - (NSInteger) numberUnreadMessagesFromDate:(NSDate *)date;
 
@@ -58,5 +59,6 @@
 - (void)importSubwayAlerts:(NSArray *)alertsArray;
 - (void)importAVLInformation:(NSArray*)info withTime:(NSDate *)time;
 - (void)importTrains:(NSArray *)trains withTime:(NSDate *)time;
+- (void)importOTP:(NSArray *)otp;
 
 @end

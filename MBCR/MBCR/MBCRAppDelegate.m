@@ -74,8 +74,7 @@
     
     
     [self configureTabBar];
-    [self updateReferenceTabBarImage];
-
+    [self updateReferenceTabBarImage]; 
     
     
     AppBlade* blade = [AppBlade sharedManager];
@@ -217,6 +216,9 @@
             tab = @"Reference";
             break;
         case 4:
+            tab = @"More";
+            break;
+        case 5:
             tab = @"Comments";
             break;
         default:
@@ -264,6 +266,7 @@
     [sm downloadAllPageAlerts];
     [sm downloadBulletinList];
     [sm downloadDocumentList];
+    [sm downloadOTPData:[NSDate date]];
 }
 
 /**
@@ -343,7 +346,6 @@
 {
     self.tabBarController.tabBar.selectionIndicatorImage = [[UIImage alloc] init];
     
-    
     for(int i = 0; i < self.tabBarController.viewControllers.count; i++)
     {
         UIViewController *vc = [self.tabBarController.viewControllers objectAtIndex:i];
@@ -361,6 +363,9 @@
                 [vc.tabBarItem setImage:[UIImage imageNamed:@"tab_reference"]];
             }break;
             case 4:{
+                [vc.tabBarItem setImage:[UIImage imageNamed:@"tab_comment"]];
+            }break;
+            case 5:{
                 [vc.tabBarItem setImage:[UIImage imageNamed:@"tab_comment"]];
             }break;
             default:{
@@ -385,6 +390,8 @@
     [self.window addSubview:pickerView];
     return pickerView;
 }
+
+
 
 
 

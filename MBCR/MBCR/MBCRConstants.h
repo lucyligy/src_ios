@@ -194,4 +194,24 @@ extern NSString* const kLocalAttributeMethod;
 #define kSecondsIn5Minutes  300.0
 
 #define kViewFlipDuration   0.8
+
+//OTP Keys
+extern NSString* const kDivisionName;
+extern NSString* const kRouteName;
+extern NSString* const kDayPassengerCount;
+extern NSString* const kDayTrainCount;
+extern NSString* const kDayOnTimeTrainCount;
+extern NSString* const kDayOTP;
+extern NSString* const kMTDPassengerCount;
+extern NSString* const kMTDTrainCount;
+extern NSString* const kMTDOnTimeTrainCount;
+extern NSString* const kMTDOTP;
+extern NSString* const kMonthOTP;
+extern NSString* const kPrevMonthPassengerCount;
+extern NSString* const kPrevMonthTrainCount;
+extern NSString* const kPrevMonthOnTimeTrainCount;
+extern NSString* const kPrevMonthOTP;
+extern NSString* const kRouteID;
+extern NSString* const kDivisionID;
+
 @end

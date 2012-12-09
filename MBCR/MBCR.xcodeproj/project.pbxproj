@@ -15,6 +15,16 @@
 		2BE4576C159CCEEF00D81603 /* MBCRSubwayAlertsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BE4576B159CCEEF00D81603 /* MBCRSubwayAlertsViewController.xib */; };
 		2BE4576E159CD00200D81603 /* MBCRSubwayAlertCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BE4576D159CD00200D81603 /* MBCRSubwayAlertCell.xib */; };
 		2BE45771159CD15B00D81603 /* MBCRSubwayAlertCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE45770159CD15B00D81603 /* MBCRSubwayAlertCell.m */; };
+		682F09BC16569B9D00A65F8C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 682F09BB16569B9D00A65F8C /* Default-568h@2x.png */; };
+		683C68A4166CF3170054946B /* MBCRDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 683C68A2166CF3170054946B /* MBCRDatePickerView.m */; };
+		683C68A5166CF3170054946B /* MBCRDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 683C68A3166CF3170054946B /* MBCRDatePickerView.xib */; };
+		683C68B9166FA5F70054946B /* OTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 683C68B8166FA5F70054946B /* OTP.m */; };
+		687B21E41663C0F0009C2F96 /* MBCROTPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 687B21E21663C0F0009C2F96 /* MBCROTPViewController.m */; };
+		687B21E51663C0F0009C2F96 /* MBCROTPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 687B21E31663C0F0009C2F96 /* MBCROTPViewController.xib */; };
+		687B21E81663D5F9009C2F96 /* tab_clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 687B21E71663D5F9009C2F96 /* tab_clock.png */; };
+		687B21F81664FE74009C2F96 /* MBCRMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 687B21F61664FE73009C2F96 /* MBCRMoreViewController.m */; };
+		687B21F91664FE74009C2F96 /* MBCRMoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 687B21F71664FE74009C2F96 /* MBCRMoreViewController.xib */; };
+		687B21FC16650914009C2F96 /* NavItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 687B21FB16650914009C2F96 /* NavItem.m */; };
 		9811946315DC240500532852 /* MBCRPDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9811946215DC240500532852 /* MBCRPDFViewController.m */; };
 		9811946515DC258500532852 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9811946415DC258500532852 /* MediaPlayer.framework */; };
 		9811946715DC258D00532852 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9811946615DC258D00532852 /* CoreText.framework */; };
@@ -59,7 +69,6 @@
 		983B2B291581191600CF24A6 /* Line+Display.m in Sources */ = {isa = PBXBuildFile; fileRef = 983B2B281581191600CF24A6 /* Line+Display.m */; };
 		9859927E162861FE0009CCC8 /* PSPDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98599277162861FE0009CCC8 /* PSPDFKit.framework */; };
 		9859927F162861FE0009CCC8 /* ACKNOWLEDGEMENTS in Resources */ = {isa = PBXBuildFile; fileRef = 98599279162861FE0009CCC8 /* ACKNOWLEDGEMENTS */; };
-		98599280162861FE0009CCC8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9859927A162861FE0009CCC8 /* LICENSE */; };
 		98599281162861FE0009CCC8 /* PSPDFKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9859927B162861FE0009CCC8 /* PSPDFKit.bundle */; };
 		98599283162861FE0009CCC8 /* VERSION in Resources */ = {isa = PBXBuildFile; fileRef = 9859927D162861FE0009CCC8 /* VERSION */; };
 		98613B5E15ACAC320084EB90 /* MBCRAlertDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98613B5D15ACAC320084EB90 /* MBCRAlertDetailsViewController.xib */; };
@@ -284,6 +293,21 @@
 		2BE4576D159CD00200D81603 /* MBCRSubwayAlertCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MBCRSubwayAlertCell.xib; path = Resources/xib/Views/Cells/MBCRSubwayAlertCell.xib; sourceTree = "<group>"; };
 		2BE4576F159CD15B00D81603 /* MBCRSubwayAlertCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBCRSubwayAlertCell.h; path = View/Cell/MBCRSubwayAlertCell.h; sourceTree = "<group>"; };
 		2BE45770159CD15B00D81603 /* MBCRSubwayAlertCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBCRSubwayAlertCell.m; path = View/Cell/MBCRSubwayAlertCell.m; sourceTree = "<group>"; };
+		682F09BB16569B9D00A65F8C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		683C68A1166CF3170054946B /* MBCRDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCRDatePickerView.h; sourceTree = "<group>"; };
+		683C68A2166CF3170054946B /* MBCRDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCRDatePickerView.m; sourceTree = "<group>"; };
+		683C68A3166CF3170054946B /* MBCRDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBCRDatePickerView.xib; sourceTree = "<group>"; };
+		683C68B7166FA5F70054946B /* OTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTP.h; sourceTree = "<group>"; };
+		683C68B8166FA5F70054946B /* OTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTP.m; sourceTree = "<group>"; };
+		687B21E11663C0F0009C2F96 /* MBCROTPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCROTPViewController.h; sourceTree = "<group>"; };
+		687B21E21663C0F0009C2F96 /* MBCROTPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCROTPViewController.m; sourceTree = "<group>"; };
+		687B21E31663C0F0009C2F96 /* MBCROTPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBCROTPViewController.xib; sourceTree = "<group>"; };
+		687B21E71663D5F9009C2F96 /* tab_clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_clock.png; path = Resources/images/tab_clock.png; sourceTree = "<group>"; };
+		687B21F51664FE73009C2F96 /* MBCRMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCRMoreViewController.h; sourceTree = "<group>"; };
+		687B21F61664FE73009C2F96 /* MBCRMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCRMoreViewController.m; sourceTree = "<group>"; };
+		687B21F71664FE74009C2F96 /* MBCRMoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBCRMoreViewController.xib; sourceTree = "<group>"; };
+		687B21FA16650914009C2F96 /* NavItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavItem.h; sourceTree = "<group>"; };
+		687B21FB16650914009C2F96 /* NavItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavItem.m; sourceTree = "<group>"; };
 		9811946115DC240400532852 /* MBCRPDFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBCRPDFViewController.h; path = ViewControllers/MBCRPDFViewController.h; sourceTree = "<group>"; };
 		9811946215DC240500532852 /* MBCRPDFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBCRPDFViewController.m; path = ViewControllers/MBCRPDFViewController.m; sourceTree = "<group>"; };
 		9811946415DC258500532852 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -1001,6 +1025,8 @@
 				98E5B76F15D04CB80034BD18 /* MBCRNoDataView.m */,
 				98E5B78315D14BB20034BD18 /* MBCRSubwayAlertsView.h */,
 				98E5B78415D14BB20034BD18 /* MBCRSubwayAlertsView.m */,
+				683C68A1166CF3170054946B /* MBCRDatePickerView.h */,
+				683C68A2166CF3170054946B /* MBCRDatePickerView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1010,6 +1036,7 @@
 			children = (
 				983B2B24158115EC00CF24A6 /* Cells */,
 				9873842415A1FAFF00F45859 /* MBCRPickerView.xib */,
+				683C68A3166CF3170054946B /* MBCRDatePickerView.xib */,
 				98E5B77115D04CD80034BD18 /* MBCRNoDataView.xib */,
 				98E5B78615D14BEB0034BD18 /* MBCRSubwayAlertsView.xib */,
 			);
@@ -1095,6 +1122,8 @@
 				98613B5D15ACAC320084EB90 /* MBCRAlertDetailsViewController.xib */,
 				98216E2915B08CD30099166B /* MBCRTrackAssignmentDetailsViewController.xib */,
 				9831CE6115C305C8004BF0AE /* MBCRAVLDetailsViewController.xib */,
+				687B21E31663C0F0009C2F96 /* MBCROTPViewController.xib */,
+				687B21F71664FE74009C2F96 /* MBCRMoreViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1102,6 +1131,7 @@
 		98B1EE7D157D298900CDBF55 = {
 			isa = PBXGroup;
 			children = (
+				682F09BB16569B9D00A65F8C /* Default-568h@2x.png */,
 				98B1EE94157D298900CDBF55 /* MBCR */,
 				98B1EF17157D309F00CDBF55 /* External */,
 				98B1EEB0157D298900CDBF55 /* MBCRTests */,
@@ -1240,6 +1270,10 @@
 				98BC33F315AC73D700281D24 /* MBCRWebViewController.m */,
 				9831CE5D15C305A8004BF0AE /* MBCRAVLDetailsViewController.h */,
 				9831CE5E15C305A8004BF0AE /* MBCRAVLDetailsViewController.m */,
+				687B21E11663C0F0009C2F96 /* MBCROTPViewController.h */,
+				687B21E21663C0F0009C2F96 /* MBCROTPViewController.m */,
+				687B21F51664FE73009C2F96 /* MBCRMoreViewController.h */,
+				687B21F61664FE73009C2F96 /* MBCRMoreViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1247,6 +1281,8 @@
 		98B1EF40157D510E00CDBF55 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				687B21FA16650914009C2F96 /* NavItem.h */,
+				687B21FB16650914009C2F96 /* NavItem.m */,
 				98B1EEA0157D298900CDBF55 /* MBCR.xcdatamodeld */,
 				98E5B58915C972E70034BD18 /* Bulletin.h */,
 				98E5B58A15C972E70034BD18 /* Bulletin.m */,
@@ -1268,6 +1304,8 @@
 				98E5B5A215C972E80034BD18 /* Line.m */,
 				98E5B77F15D0679D0034BD18 /* TrackAssignment.h */,
 				98E5B78015D0679D0034BD18 /* TrackAssignment.m */,
+				683C68B7166FA5F70054946B /* OTP.h */,
+				683C68B8166FA5F70054946B /* OTP.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1518,6 +1556,7 @@
 				98E5B67715CB05650034BD18 /* tab_reference@2x.png */,
 				98E5B67815CB05650034BD18 /* tab_track.png */,
 				98E5B67915CB05650034BD18 /* tab_track@2x.png */,
+				687B21E71663D5F9009C2F96 /* tab_clock.png */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
@@ -1757,9 +1796,13 @@
 				986AC73915D2D23000E37D3A /* windowshade_arrow_up.png in Resources */,
 				986AC73A15D2D23000E37D3A /* windowshade_arrow_up@2x.png in Resources */,
 				9859927F162861FE0009CCC8 /* ACKNOWLEDGEMENTS in Resources */,
-				98599280162861FE0009CCC8 /* LICENSE in Resources */,
 				98599281162861FE0009CCC8 /* PSPDFKit.bundle in Resources */,
 				98599283162861FE0009CCC8 /* VERSION in Resources */,
+				682F09BC16569B9D00A65F8C /* Default-568h@2x.png in Resources */,
+				687B21E51663C0F0009C2F96 /* MBCROTPViewController.xib in Resources */,
+				687B21E81663D5F9009C2F96 /* tab_clock.png in Resources */,
+				687B21F91664FE74009C2F96 /* MBCRMoreViewController.xib in Resources */,
+				683C68A5166CF3170054946B /* MBCRDatePickerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1864,6 +1907,11 @@
 				98E5B78515D14BB20034BD18 /* MBCRSubwayAlertsView.m in Sources */,
 				986AC73615D2C05900E37D3A /* MBCRFilterSegmentedControl.m in Sources */,
 				9811946315DC240500532852 /* MBCRPDFViewController.m in Sources */,
+				687B21E41663C0F0009C2F96 /* MBCROTPViewController.m in Sources */,
+				687B21F81664FE74009C2F96 /* MBCRMoreViewController.m in Sources */,
+				687B21FC16650914009C2F96 /* NavItem.m in Sources */,
+				683C68A4166CF3170054946B /* MBCRDatePickerView.m in Sources */,
+				683C68B9166FA5F70054946B /* OTP.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1933,6 +1981,7 @@
 					"-DRZ_WEBLOG=1",
 				);
 				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = DebugWithFullLog;
 		};
@@ -1941,7 +1990,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/MBCR/External/PSPDFKit\"",
+					"\"$(SRCROOT)/MBCR/External/PSPDFKit-Basic\"",
 					"\"$(SRCROOT)/MBCR/External/PSPDFKit-Basic/Products/PSPDFKit.embeddedframework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2005,7 +2054,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/MBCR/External/PSPDFKit\"",
+					"\"$(SRCROOT)/MBCR/External/PSPDFKit-Basic\"",
 					"\"$(SRCROOT)/MBCR/External/PSPDFKit-Basic/Products/PSPDFKit.embeddedframework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2069,7 +2118,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/MBCR/External/PSPDFKit\"",
+					"\"$(SRCROOT)/MBCR/External/PSPDFKit-Basic\"",
 					"\"$(SRCROOT)/MBCR/External/PSPDFKit-Basic/Products/PSPDFKit.embeddedframework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2125,6 +2174,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -2155,7 +2205,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/MBCR/External/PSPDFKit\"",
+					"\"$(SRCROOT)/MBCR/External/PSPDFKit-Basic\"",
 					"\"$(SRCROOT)/MBCR/External/PSPDFKit-Basic/Products/PSPDFKit.embeddedframework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2177,7 +2227,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/MBCR/External/PSPDFKit\"",
+					"\"$(SRCROOT)/MBCR/External/PSPDFKit-Basic\"",
 					"\"$(SRCROOT)/MBCR/External/PSPDFKit-Basic/Products/PSPDFKit.embeddedframework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2251,6 +2301,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DRZ_DEBUG=1";
 				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = DebugWithLog;
 		};
@@ -2259,7 +2310,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/MBCR/External/PSPDFKit\"",
+					"\"$(SRCROOT)/MBCR/External/PSPDFKit-Basic\"",
 					"\"$(SRCROOT)/MBCR/External/PSPDFKit-Basic/Products/PSPDFKit.embeddedframework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

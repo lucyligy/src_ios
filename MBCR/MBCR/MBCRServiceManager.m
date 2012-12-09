@@ -25,12 +25,14 @@ NSString* const authKey     = @"Hello";
 @property (nonatomic, strong) RZWebServiceManager* webManger;
 @property (nonatomic, strong) NSString* hashAuthToken;
 @property (nonatomic, assign) NSInteger openRequests;
+@property (nonatomic, retain) NSDate *otpDate;
 @end
 
 @implementation MBCRServiceManager
 @synthesize webManger = _webManger;
 @synthesize hashAuthToken = _hashAuthToken;
 @synthesize openRequests = _openRequests;
+@synthesize otpDate = _otpDate;
 
 + (MBCRServiceManager*)shared
 {
@@ -381,6 +383,48 @@ NSString* const authKey     = @"Hello";
     RZError(@"Bulletins Download Failed: %@",(error) ? error: @"There was a parsing problem with the data");
 }
 
+
+#pragma mark - OTP Request
+- (void)downloadOTPData:(NSDate *)date {
+    [self updateStatusIndicatorWithNewRequest:YES];
+    _otpDate = date;
+    RZLog(@"Download OTP Data");
+//    NSArray *value = [[NSArray alloc] initWithObjects:date, nil];
+//    NSArray *key = [[NSArray alloc] initWithObjects:@"Date", nil];
+    
+//    NSDictionary *param = [NSDictionary dictionaryWithObjects:value forKeys:key];
+    
+    RZWebServiceRequest *request =[self.webManger makeRequestWithKey:@"getOTP" andTarget:self enqueue:NO];
+    
+    request.timeoutInterval = kMaxTimeout;
+    request.headers = [NSDictionary dictionaryWithObject:self.hashAuthToken forKey:@"Authorization"];
+    [self.webManger enqueueRequest:request];
+}
+
+- (void)otpDownloadCompleted:(id)userData {
+    
+    RZWebLog(@"%@",userData);
+    NSDictionary *json = (NSDictionary *)userData;
+    NSDictionary *errorDictionary = [json objectForKey:kResponseStatusKey];
+    int successStatus = [[errorDictionary objectForKey:kResponseSuccess] intValue];
+    if(successStatus != 1) {
+        [self otpDownloadFailed:nil];
+    }
+    NSArray* otp = [json objectForKey:kResponseDataKey];
+    if([otp count] <= 0) {
+        [self otpDownloadFailed:nil];
+    }
+    
+    [[MBCRDataManager shared] importOTP: otp];
+    
+    [self updateStatusIndicatorWithNewRequest:NO];
+}
+
+- (void)otpDownloadFailed:(NSError *)error {
+    [self updateStatusIndicatorWithNewRequest:NO];
+    RZError(@"OPT Download Failed: %@",(error) ? error: @"There was a parsing problem with the data");
+}
+
 - (void)updateStatusIndicatorWithNewRequest:(BOOL)newRequest {
     if (newRequest) {
         self.openRequests ++;
@@ -394,6 +438,7 @@ NSString* const authKey     = @"Hello";
         }
     }
 }
+
 
 @end
 

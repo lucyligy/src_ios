@@ -30,4 +30,6 @@
 - (void)downloadAVLInformation;
 - (void)downloadAVLInformationWithDelegate:(id<ServiceManagerDelegate>)delegate;
 - (void)downloadTrainInformation;
+- (void)downloadOTPData:(NSDate *) date;
+
 @end

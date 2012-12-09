@@ -178,4 +178,22 @@ NSString* const kLocalAttributeName         = @"name";
 NSString* const kLocalAttributeType         = @"type";
 NSString* const kLocalAttributeMethod       = @"method";
 
+//OTP Keys
+NSString* const kDivisionName               = @"DivisionName";
+NSString* const kRouteName                  = @"RouteName";
+NSString* const kDayPassengerCount          = @"DayPassengerCount";
+NSString* const kDayTrainCount              = @"DayTrainCount";
+NSString* const kDayOnTimeTrainCount        = @"DayOnTimeTrainCount";
+NSString* const kDayOTP                     = @"DayOTP";
+NSString* const kMTDPassengerCount          = @"MTDPassengerCount";
+NSString* const kMTDTrainCount              = @"MTDTrainCount";
+NSString* const kMTDOnTimeTrainCount        = @"MTDOnTimeTrainCount";
+NSString* const kMTDOTP                     = @"MTDOTP";
+NSString* const kMonthOTP                   = @"MonthOTP";
+NSString* const kPrevMonthPassengerCount    = @"PrevMonthPassengerCount";
+NSString* const kPrevMonthTrainCount        = @"PrevMonthTrainCount";
+NSString* const kPrevMonthOnTimeTrainCount  = @"PrevMonthOnTimeTrainCount";
+NSString* const kPrevMonthOTP               = @"PrevMonthOTP";
+NSString* const kRouteID                    = @"RouteID";
+NSString* const kDivisionID                 = @"DivisionID";
 @end
